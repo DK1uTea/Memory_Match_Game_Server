@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import Player from './routers/Player.js';
 import Ranking from './routers/Ranking.js';
+import Statistic from './routers/Statistic.js';
 import connection from './db.js';
 
 const app = express();
@@ -14,7 +15,8 @@ app.use(bodyParser.json());
 
 // Routes
 app.use('/api/player', Player);
-app.use('/api/ranking', Ranking)
+app.use('/api/ranking', Ranking);
+app.use('/api/statistic', Statistic);
 
 // Connect to MySQL (This step is already done in db.js)
 connection.connect((err) => {
